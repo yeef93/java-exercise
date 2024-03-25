@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+import static java.util.Collections.rotate;
+
 public class Exercise2 {
     /**
      * Java Array Program For Array Rotation
@@ -25,17 +27,31 @@ public class Exercise2 {
         for (int i = 0; i < size; i++) {
             arrayList.add(scanner.nextInt());
         }
-
+        // Ask the user for fill number rotate start from
         System.out.println("Enter rotate start from:");
         int d = scanner.nextInt();
-
         // Display the ArrayList elements
         System.out.println("List Data:"+arrayList);
-        System.out.println("Result After Rotate is:"+rotateArray(arrayList));
+        System.out.println("Result After Rotate is:"+rotateArray(arrayList,d));
     }
 
-    // method to get max number
-    static int rotateArray(ArrayList<Integer>  list){
-        return Collections.max(list);
+    // method to rotate array
+    static ArrayList<Integer> rotateArray(ArrayList<Integer>  list, int d){
+        ArrayList<Integer> rotateResult = new ArrayList<>();
+        if (d == 0){
+            rotateResult = list;
+        }
+        else if(d<list.toArray().length+1){
+            for(int i = d-1; i < list.size(); i++){
+                rotateResult.add(list.get(i));
+            }
+            for(int i = 0; i < d-1; i++){
+                rotateResult.add(list.get(i));
+            }
+        }
+        else {
+
+        }
+        return (rotateResult);
     }
 }
