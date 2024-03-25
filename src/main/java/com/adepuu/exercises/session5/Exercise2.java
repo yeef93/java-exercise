@@ -1,10 +1,7 @@
 package com.adepuu.exercises.session5;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
-
-import static java.util.Collections.rotate;
 
 public class Exercise2 {
     /**
