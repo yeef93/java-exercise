@@ -38,14 +38,14 @@ public class Exercise2 {
     // method to rotate array
     static ArrayList<Integer> rotateArray(ArrayList<Integer>  list, int d){
         ArrayList<Integer> rotateResult = new ArrayList<>();
-        if (d == 0){
+        if (d == 1){
             rotateResult = list;
         }
         else if(d<list.toArray().length+1){
-            for(int i = d-1; i < list.size(); i++){
+            for(int i = d; i < list.size(); i++){
                 rotateResult.add(list.get(i));
             }
-            for(int i = 0; i < d-1; i++){
+            for(int i = 0; i < d; i++){
                 rotateResult.add(list.get(i));
             }
         }
