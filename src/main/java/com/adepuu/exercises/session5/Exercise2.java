@@ -1,5 +1,7 @@
 package com.adepuu.exercises.session5;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Exercise2 {
@@ -11,8 +13,29 @@ public class Exercise2 {
      * So, Final result: 3, 4, 5, 6, 7, 1, 2
      */
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("========Rotate The Array========");
+        // Ask the user for fill the size of the array
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+        // Ask the user to input elements for the array
+        System.out.println("Enter " + size + " elements for the array:");
+        // Convert the array to an ArrayList
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            arrayList.add(scanner.nextInt());
+        }
 
+        System.out.println("Enter rotate start from:");
+        int d = scanner.nextInt();
 
+        // Display the ArrayList elements
+        System.out.println("List Data:"+arrayList);
+        System.out.println("Result After Rotate is:"+rotateArray(arrayList));
+    }
 
+    // method to get max number
+    static int rotateArray(ArrayList<Integer>  list){
+        return Collections.max(list);
     }
 }

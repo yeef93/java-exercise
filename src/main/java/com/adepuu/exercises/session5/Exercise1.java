@@ -25,7 +25,7 @@ public class Exercise1 {
 
         // Display the ArrayList elements
         System.out.println("List Data:"+arrayList);
-        System.out.println("Largest element is:"+getMax(arrayList));
+        System.out.println("Largest element is:"+getMaximum(arrayList));
     }
 
     // method to get max number
@@ -33,5 +33,13 @@ public class Exercise1 {
         return Collections.max(list);
     }
 
-
+    // another method to get max number
+    static int getMaximum(ArrayList<Integer>  list){
+        int maximum = list.get(0);
+        for (int i = 1; i < list.size(); i++) {
+            if (maximum < list.get(i))
+                maximum = list.get(i);
+        }
+        return maximum;
+    }
 }
