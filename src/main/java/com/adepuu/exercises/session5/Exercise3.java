@@ -1,7 +1,6 @@
 package com.adepuu.exercises.session5;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Exercise3 {
@@ -44,9 +43,6 @@ public class Exercise3 {
     // method to check duplicate data
     static boolean isDuplicate(ArrayList<Integer>  list){
         boolean statusDuplicate = false;
-        int start = 0;
-        int end = list.size();
-
         for(int i = 0; i < list.size(); i++){
             for(int j = 0; j < list.size(); j++){
                 if(i!=j){
