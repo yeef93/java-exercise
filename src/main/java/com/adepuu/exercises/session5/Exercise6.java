@@ -28,17 +28,17 @@ public class Exercise6 {
             arrayList.add(scanner.nextInt());
         }
 
+        System.out.print("Enter Key to Remove: ");
+        int key = scanner.nextInt();
         // Display the ArrayList elements
         System.out.println("List Data:"+arrayList);
         // Result
-        System.out.println("Result Without Occurence Data:"+removeOccurence(arrayList));
+        System.out.println("Result Without Occurence Data:"+removeOccurence(arrayList, key));
     }
-    static ArrayList<Integer> removeOccurence(ArrayList<Integer>  list){
+    static ArrayList<Integer> removeOccurence(ArrayList<Integer>  list, int key){
         for(int i = 0; i < list.size(); i++){
-            for(int j = 0; j < list.size(); j++){
-                if(list.get(i) == list.get(j)){
-                    list.remove(list.get(j));
-                }
+            if(list.get(i) == key){
+                list.remove(list.get(i));
             }
         }
         return (list);
