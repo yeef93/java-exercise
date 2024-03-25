@@ -22,7 +22,7 @@ public class Exercise3 {
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("========Check Duplicate Data========");
+        System.out.println("========Check Duplicate Data Or Not========");
         // Ask the user for fill the size of the array
         System.out.print("Enter the size of the array: ");
         int size = scanner.nextInt();
@@ -36,11 +36,26 @@ public class Exercise3 {
 
         // Display the ArrayList elements
         System.out.println("List Data:"+arrayList);
+        // Result
+        System.out.println("Duplicate Status:"+isDuplicate(arrayList));
 
     }
 
-    // method to get max number
-//    static boolean isDuplicate(ArrayList<Integer>  list){
-//        //return Collections.max(list);
-//    }
+    // method to check duplicate data
+    static boolean isDuplicate(ArrayList<Integer>  list){
+        boolean statusDuplicate = false;
+        int start = 0;
+        int end = list.size();
+
+        for(int i = 0; i < list.size(); i++){
+            for(int j = 0; j < list.size(); j++){
+                if(i!=j){
+                    if(list.get(i) == list.get(j)){
+                        statusDuplicate = true;
+                    }
+                }
+            }
+        }
+        return (statusDuplicate);
+    }
 }
