@@ -1,5 +1,8 @@
 package com.adepuu.exercises.session5;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Exercise6 {
     /**
      * Java Array Program to Remove All Occurrences of an Element in an Array
@@ -12,6 +15,32 @@ public class Exercise6 {
      * Final result: [2, 3, 5]
      */
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("========Remove Duplicate Data========");
+        // Ask the user for fill the size of the array
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+        // Ask the user to input elements for the array
+        System.out.println("Enter " + size + " elements for the array:");
+        // Convert the array to an ArrayList
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            arrayList.add(scanner.nextInt());
+        }
 
+        // Display the ArrayList elements
+        System.out.println("List Data:"+arrayList);
+        // Result
+        System.out.println("Result Without Occurence Data:"+removeOccurence(arrayList));
+    }
+    static ArrayList<Integer> removeOccurence(ArrayList<Integer>  list){
+        for(int i = 0; i < list.size(); i++){
+            for(int j = 0; j < list.size(); j++){
+                if(list.get(i) == list.get(j)){
+                    list.remove(list.get(j));
+                }
+            }
+        }
+        return (list);
     }
 }
