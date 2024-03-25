@@ -40,17 +40,21 @@ public class Exercise8 {
     }
 
     static ArrayList<Integer> findDuplicate(ArrayList<Integer>  list){
-        ArrayList<Integer> duplicateData = new ArrayList<>();
+        ArrayList<Integer> duplicateResult = new ArrayList<>();
         for(int i = 0; i < list.size(); i++){
             for(int j = 0; j < list.size(); j++){
                 if(i!=j){
-                    if(list.get(i) == list.get(j)){
-
+                    if(list.get(i) != list.get(j)){
                         list.remove(list.get(i));
                     }
+                    else if(list.get(i) == list.get(j)){
+                        duplicateResult.add(list.get(i));
+                        list.remove(list.get(i));
+                    }
+
                 }
             }
         }
-        return (list);
+        return (duplicateResult);
     }
 }
