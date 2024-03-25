@@ -21,7 +21,7 @@ public class Exercise8 {
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("========Remove Duplicate Data========");
+        System.out.println("========Find Duplicate Data========");
         // Ask the user for fill the size of the array
         System.out.print("Enter the size of the array: ");
         int size = scanner.nextInt();
@@ -51,7 +51,6 @@ public class Exercise8 {
                         duplicateResult.add(list.get(i));
                         list.remove(list.get(i));
                     }
-
                 }
             }
         }
