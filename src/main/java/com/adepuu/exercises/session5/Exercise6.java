@@ -36,11 +36,12 @@ public class Exercise6 {
         System.out.println("Result Without Occurence Data:"+removeOccurence(arrayList, key));
     }
     static ArrayList<Integer> removeOccurence(ArrayList<Integer>  list, int key){
+        ArrayList<Integer> removeResult = new ArrayList<>();
         for(int i = 0; i < list.size(); i++){
-            if(list.get(i) == key){
-                list.remove(list.get(i));
+            if(list.get(i) != key){
+                removeResult.add(list.get(i));
             }
         }
-        return (list);
+        return (removeResult);
     }
 }
