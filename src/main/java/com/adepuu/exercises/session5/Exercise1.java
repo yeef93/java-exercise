@@ -1,6 +1,7 @@
 package com.adepuu.exercises.session5;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Exercise1 {
@@ -24,6 +25,13 @@ public class Exercise1 {
 
         // Display the ArrayList elements
         System.out.println("List Data:"+arrayList);
-        System.out.println("Largest element is:"+arrayList);
+        System.out.println("Largest element is:"+getMax(arrayList));
     }
+
+    // method to get max number
+    static int getMax(ArrayList<Integer>  list){
+        return Collections.max(list);
+    }
+
+
 }
