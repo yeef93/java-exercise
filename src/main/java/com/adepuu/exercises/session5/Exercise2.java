@@ -1,5 +1,7 @@
 package com.adepuu.exercises.session5;
 
+import java.util.Scanner;
+
 public class Exercise2 {
     /**
      * Java Array Program For Array Rotation
@@ -9,6 +11,8 @@ public class Exercise2 {
      * So, Final result: 3, 4, 5, 6, 7, 1, 2
      */
     public static void main(String[] args) {
+
+
 
     }
 }
