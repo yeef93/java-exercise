@@ -35,5 +35,18 @@ public class Exercise2 {
         } catch (FileNotFoundException e) {
             System.out.println("File Not Found");
         }
+        catch (IOException e) {
+            System.out.println("File cant be read");
+        }
+        finally {
+            try {
+                if(reader != null){
+                    reader.close();
+                }
+                }
+            catch (IOException ex){
+                ex.printStackTrace();
+                }
+        }
     }
 }
