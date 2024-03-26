@@ -22,6 +22,7 @@ public class Exercise6 {
         int size = scanner.nextInt();
         // Ask the user to input elements for the array
         System.out.println("Enter " + size + " elements for the array:");
+        scanner.close();
         // Convert the array to an ArrayList
         ArrayList<Integer> arrayList = new ArrayList<>();
         for (int i = 0; i < size; i++) {

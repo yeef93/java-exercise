@@ -24,6 +24,7 @@ public class Exercise7 {
         String first = scanner.next();
         System.out.println("Enter second text: ");
         String second = scanner.next();
+        scanner.close();
         System.out.println("First Text :"+first);
         System.out.println("Second Text :"+second);
         // Result
