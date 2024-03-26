@@ -3,6 +3,7 @@ package com.adepuu.exercises.session6;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Exercise2 {
@@ -19,15 +20,20 @@ public class Exercise2 {
     }
 
     static void readFileContents(String fileName) {
-//        BufferedReader reader = null;
-//        try {
-//            reader = new BufferedReader(new FileReader(fileName));
-//        } catch (FileNotFoundException e) {
-//            throw new RuntimeException(e);
-//        }
-//        String line;
-//        while ((line = reader.readLine()) != null) {
-//            System.out.println(line);
-//        }
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(fileName));
+            String line;
+            while (true) {
+                try {
+                    if (!((line = reader.readLine()) != null)) break;
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.println(line);
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File Not Found");
+        }
     }
 }
