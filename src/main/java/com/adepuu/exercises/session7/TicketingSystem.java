@@ -1,5 +1,9 @@
 package com.adepuu.exercises.session7;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 public class TicketingSystem {
     /**
      * Write a Java Program using OOP about simple ticketing system for an event.
@@ -19,6 +23,58 @@ public class TicketingSystem {
      * Start your project from the main method below ;) have fun!
      */
     public static void main(String[] args) {
-
+        System.out.println("===== Create Ticket Event =====");
+        //Create 5 Ticket
+        int totalTicket = 5;
+        // Generate a random UUID
+        for(int i=0 ; i<totalTicket; i++){
+            UUID uuid = UUID.randomUUID();
+            Ticket obj = new Ticket(uuid, "Event A", 25000);
+        }
     }
+}
+
+class Ticket{
+    // Instance variables
+    public static int totalTicket =0;
+    private UUID identifier;
+    private String eventName;
+    private double price;
+
+    private Map<Integer, Ticket> eventTickets;
+
+    public Ticket() {
+        this.eventTickets = new HashMap<>();
+    }
+
+    // Constructor to initialize the instance variables
+    public Ticket(UUID identifier, String eventName, double price) {
+        this.identifier = identifier;
+        this.eventName = eventName;
+        this.price = price;
+        System.out.println("Ticket Id: " + identifier+", Event: "+eventName+ ", Price: "+price);
+        totalTicket++;
+    }
+
+    public UUID getIdTicket(){
+        return identifier;
+    }
+
+    public String getEventName(){
+        return eventName;
+    }
+
+    public double getPrice(){
+        return price;
+    }
+
+    // Instance method to print house details
+    public void printDetails() {
+        System.out.println("Unique Identifier: " + identifier);
+        System.out.println("Event Name: " + eventName);
+        System.out.println("Price: " + price);
+        System.out.println(+totalTicket);
+        System.out.println("-------------------------");
+    }
+
 }
