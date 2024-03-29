@@ -37,6 +37,7 @@ public class TicketingSystem {
             UUID uuid = UUID.randomUUID();
             Ticket obj = new Ticket(uuid, eventName, eventPrice);
         }
+
     }
 }
 
